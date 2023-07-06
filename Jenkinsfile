@@ -39,11 +39,7 @@ pipeline {
     }
 
     stage('Deploying React.js container to Kubernetes') {
-      agent {
-        node{
-          label 'k8s'
-        }
-      }
+      agent any
       steps {
         script {
           sh "kubectl apply -f ./deployment.yaml -n qp"
