@@ -5,6 +5,8 @@ pipeline {
         registryCredential = 'AbhiDockerHubCreds' 
   }
 
+  agent none
+
   stages {
     stage('Checkout Source') {
       agent any
@@ -14,6 +16,7 @@ pipeline {
     }
 
     stage('Build image') {
+      agent any
       steps{
         script {
           dockerImage = docker.build registry
@@ -22,6 +25,7 @@ pipeline {
     }
 
     stage('Pushing Image') {
+      agent any
       environment {
                registryCredential = 'DockerHubCreds'
            }
