@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout Source') {
       agent any
       steps {
-        git branch: 'main', url: 'https://github.com/gitqprofiles/J2K.git'
+        git branch: 'main', url: 'https://github.com/AbhiGowdaIndia/J2K.git'
       }
     }
 
