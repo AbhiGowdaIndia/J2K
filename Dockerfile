@@ -8,7 +8,7 @@ WORKDIR $REACTJS_HOME
 
 COPY . $REACTJS_HOME
 
-# install dependencies
+# install dependenciess
 RUN npm install -g serve
 
 RUN npm install
